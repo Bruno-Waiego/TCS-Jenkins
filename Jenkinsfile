@@ -14,5 +14,17 @@ pipeline {
                 sh 'mvn test' 
         }
     }
+        stage('Results') {
+            steps {
+                 script {
+                    def logz = currentBuild.rawBuild.getLog(10000);
+                    def result = logz.find { it.contains('Sucess') }
+                    if (result) {
+                        error ('Sucesso ao executar ' + result)
+                    }
+                }
+            }
+       
+        }
    }
 }
