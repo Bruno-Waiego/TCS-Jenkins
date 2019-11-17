@@ -12,7 +12,8 @@ pipeline {
         stage('Test') { 
             steps {
                 sh 'mvn test'
-                sh 'javac src/test/java/br/com/animais/adocao/dao/teste/CadastroOngTeste.java && java src/test/java/br/com/animais/adocao/dao/teste/CadastroOngTeste'
+                sh 'java src/test/java/br/com/animais/adocao/dao/teste/CadastroOngTeste'
     }
-    }}
+    }
+    }
 }
