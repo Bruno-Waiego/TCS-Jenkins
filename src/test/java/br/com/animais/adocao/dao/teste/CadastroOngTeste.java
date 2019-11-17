@@ -28,7 +28,7 @@ class CadastroOngTeste {
 		ong.setUsuario(usu);
 		ong.setEndereco(end);
 
-		ong.setNome("Ação animal");
+		ong.setNome("Acao animal");
 		ong.setTelefone("(99) 99999-9999");
 		ong.setEmail("@gmail");
 		ong.setDescricao("Animais de rua");
