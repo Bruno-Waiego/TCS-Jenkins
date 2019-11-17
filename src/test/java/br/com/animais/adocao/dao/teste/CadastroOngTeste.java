@@ -26,8 +26,7 @@ class CadastroOngTeste extends TestCase {
         super.tearDown();
     }
 	
-	@Test
-	void testCadastroOng() {
+	public void testCadastroOng() {
 		Usuario usu = new Usuario();
 		usu.setLogin("@gmail");
 		usu.setSenha("senha");
