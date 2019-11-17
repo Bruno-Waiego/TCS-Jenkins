@@ -19,6 +19,7 @@ class CadastroOngTeste extends TestCase {
     protected void setUp() throws Exception {
         super.setUp();
         ong = new Ong();
+	testCadastroOng();
     }
 
     @Override
