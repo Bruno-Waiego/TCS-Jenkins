@@ -13,9 +13,20 @@ pipeline {
             steps {
                 sh 'mvn test' 
             }
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml' 
+        }
+        stage('Build') {
+            steps {
+                sh 'javac src/test/java/br/com/animais/adocao/dao/teste/CadastroOngTeste.java && java src/test/java/br/com/animais/adocao/dao/teste/CadastroOngTeste'
+            }
+        }
+        stage('Results') { 
+            steps {
+                 script {
+                    def logz = currentBuild.rawBuild.getLog(10000);
+                    def result = logz.find { it.contains('ONG') }
+                    if (result) {
+                        error ('Buildou corretamnete ' + result)
+                    }
                 }
             }
         }
