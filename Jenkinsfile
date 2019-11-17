@@ -12,8 +12,18 @@ pipeline {
         stage('Test') { 
             steps {
                 sh 'mvn test'
-                sh 'java src/test/java/br/com/animais/adocao/dao/teste/CadastroOngTeste'
-    }
-    }
+            }
+         }
+        stage('Results'){
+            steps{
+                script{
+                  def logz = currentBuild.rawBuild.getLog(1000);
+                  def result = logz.find{it.contains('Success')}
+                  if(!result){
+                    error('FAILING TO DUE' + result)
+                }
+            }
+           }
+        }         
     }
 }
