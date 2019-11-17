@@ -13,6 +13,10 @@ pipeline {
             steps {
                 sh 'mvn test' 
         }
+            stage('Build') { 
+            steps {
+                sh 'java src/test/java/br/com/animais/adocao/dao/teste/CadastroOngTeste.java' 
+        }
        
     }
     }
