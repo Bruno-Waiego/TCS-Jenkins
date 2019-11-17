@@ -47,7 +47,7 @@ class CadastroOngTeste extends TestCase {
 		ong.setEmail("@gmail");
 		ong.setDescricao("Animais de rua");
 		ong.setCnpj("99.999.999/9999-99");
-
+		assertEquals(ong.getNome(), "Acao animal");
 		System.out.println("Ong:" + ong.getNome());
 	}
 }
