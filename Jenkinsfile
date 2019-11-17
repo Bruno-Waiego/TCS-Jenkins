@@ -14,16 +14,6 @@ pipeline {
                 sh 'mvn test' 
             }
         }
-        stage('Results') { 
-            steps {
-                 script {
-                    def logz = currentBuild.rawBuild.getLog(10000);
-                    def result = logz.find { it.contains('Ong:Acao animal') }
-                    if (result) {
-                        error ('Buildou corretamente ' + result)
-                    }
-                }
-            }
         }
        
     }
