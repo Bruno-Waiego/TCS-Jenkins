@@ -1,16 +1,33 @@
 package br.com.animais.adocao.dao.teste;
 
+import junit.framework.Test;
+import junit.framework.TestCase;
+
 import br.com.animais.adocao.model.Endereco;
 import br.com.animais.adocao.model.Ong;
 import br.com.animais.adocao.model.Usuario;
 
-class CadastroOngTeste {
+class CadastroOngTeste extends TestCase {
 
 	private Ong ong;
 
+	public CadastroOngTeste(String testName) {
+        super(testName);
+    }
+
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+        ong = new Ong();
+    }
+
+    @Override
+    protected void tearDown() throws Exception {
+        super.tearDown();
+    }
+	
 	@Test
 	void testCadastroOng() {
-		ong = new Ong();
 		Usuario usu = new Usuario();
 		usu.setLogin("@gmail");
 		usu.setSenha("senha");
