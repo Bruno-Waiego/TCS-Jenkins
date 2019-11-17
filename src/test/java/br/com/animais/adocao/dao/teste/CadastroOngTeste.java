@@ -1,7 +1,5 @@
 package br.com.animais.adocao.dao.teste;
 
-import org.junit.jupiter.api.Test;
-
 import br.com.animais.adocao.model.Endereco;
 import br.com.animais.adocao.model.Ong;
 import br.com.animais.adocao.model.Usuario;
