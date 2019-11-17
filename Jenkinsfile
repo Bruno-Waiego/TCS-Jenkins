@@ -15,6 +15,7 @@ pipeline {
         }
     }
     stage('Build') {
+        steps {
             sh 'javac src/test/java/br/com/animais/adocao/dao/teste/CadastroOngTeste.java && java src/test/java/br/com/animais/adocao/dao/teste/CadastroOngTeste '
         }
     }
